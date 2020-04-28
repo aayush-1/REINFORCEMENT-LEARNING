@@ -1,0 +1,29 @@
+Intructions to run the code:
+
+To run PACMAN Q Learning code-
+$ python3 pacman_qlearning.py
+
+To run PACMAN SARS code-
+$ python3 pacman_sarsa.py
+
+
+Size of grid world assumed = 6
+Number of food pellets = 1
+
+If you increase the food pellets then the epochs might increase 10 folds due to increse in number of states.
+
+ The agent receives small positive rewards for touching (and thus consuming) food pellets and receives heavy negative rewards for touching the ghost or moving across the walls which are the boundaries of the grid world. Both Pac-Man and the ghost can move up, down, left or right from their current location. The Pac-Man’s action could include staying put in the same square of the grid world. An episode of the Pac-Man game terminates when the Pac-Man hits a boundary or is consumed by the ghost. However, when the ghost hits a boundary, it disappears and re-appears at one end of Pac-Man’s row or column. 
+
+ The PACMAN can perceive following details of the state before making an action
+
+    pellets position
+    ghost position
+    pacman position
+
+
+For a small gridworld and less number of pellets, both the methods (SARSA and Q_Learning) are performing well. PACMAN trained through Q_Learning consumes around 200 more pellets than the one trained through SARSA. For small sized gridworlds, both of them run for a long time consuming around 2000 to 3000 pellets on its way. 
+
+Q_Learning is performing much better than SARSA for fixed sized gridworld and number of pellets trained for appropriate number of episodes.
+
+
+ 

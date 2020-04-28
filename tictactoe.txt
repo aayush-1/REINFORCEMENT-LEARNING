@@ -1,0 +1,104 @@
+Game of Tic-Tac-Toe:
+
+To run the game:-
+$ python3 tictac.py
+
+To display the game, uncomment every commented line in the TESTING CODE part in the end.
+
+
+To change the type of agent i.e Safe or Random, change input to environment.opponent_act as follows:
+0 - for random agent
+1 - for safe agent
+2 - to randomly select between random and safe agent
+
+(1) Training is done only against the random player. But the learnt Q-table is tested against both random and safe player.
+
+	Training on 20000 episodes:
+
+		Statistics while testing against Random Agent---------------------------------
+		win--  900
+		loss--  32
+		draw--  68
+
+		Statistics while testing against Safe Agent---------------------------------
+		win--  343
+		loss--  321
+		draw--  336
+
+
+	Training on 10000 episodes:
+
+		Statistics while testing against Random Agent---------------------------------
+		win--  853
+		loss--  94
+		draw--  53
+
+		Statistics while testing against Safe Agent---------------------------------
+		win--  143
+		loss--  636
+		draw--  221
+
+(2) Training is done only against the safe player. But the learnt Q-table is tested against both random and safe player.
+
+	Training on 20000 episodes:
+
+		Statistics while testing against Random Agent---------------------------------
+		win--  690
+		loss--  124
+		draw--  186
+
+		Statistics while testing against Safe Agent---------------------------------
+		win--  363
+		loss--  126
+		draw--  511
+
+
+
+	Training on 10000 episodes:
+
+		Statistics while testing against Random Agent---------------------------------
+		win--  525
+		loss--  254
+		draw--  221
+
+		Statistics while testing against Safe Agent---------------------------------
+		win--  329
+		loss--  354
+		draw--  317
+
+(3) In every game of training, we randomly select our opponent. The learnt Q-table is tested against both random and safe player.
+
+	Training on 20000 episodes:
+
+		Statistics while testing against Random Agent---------------------------------
+		win--  838
+		loss--  54
+		draw--  108
+
+		Statistics while testing against Safe Agent---------------------------------
+		win--  334
+		loss--  354
+		draw--  312
+
+	Training on 10000 episodes:
+
+		Statistics while testing against Random Agent---------------------------------
+		win--  763
+		loss--  106
+		draw--  131
+
+		Statistics while testing against Safe Agent---------------------------------
+		win--  227
+		loss--  395
+		draw--  378
+
+
+(4) Among the three agents developed, which agent is best ? Why ?
+
+The best agent is Safe player which mostly works like a human player and trains the agent well for every scenario. Whereas the random agent trains it to win against a random player but fails to win against safe player. It is beacuse the random player teaches the agent to win through a particular move but fails to train it to defend itself and draw a particular match.
+
+
+(5) Is the Q-learning agent developed unbeatable against any possible opponent ? If not,suggest ways to improve the training process.
+
+Basically the moves which leads to loss or win are updated quite frequently but the Q values of lower level states are mostly diminished or 0(as initialized). Thus we need a better learning method which updates the Q values of all the states incurred till the episode terminates. In this way the agent would move in the winning direction right from the begining rather than depending upon the Qvalues of later acheived states.
+
